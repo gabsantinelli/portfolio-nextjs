@@ -1,6 +1,19 @@
 import { Header } from '@/components/Header'
 import { Hero } from '@/components/Hero'
-import { About } from '@/components/About' // 1. IMPORTE o novo componente aqui
+import { About } from '@/components/About'
+import { ProjectCard } from '@/components/ProjectCard'
+
+
+const projectsData = [
+  {
+    imageUrl: '/projeto-cartao-visitas.png',
+    title: 'Cartão de Visitas Digital',
+    description: 'Um agregador de links inspirado no Linktree, construído com HTML e CSS puros.',
+    projectUrl: 'https://cartao-de-visitas-gabsantinelli.vercel.app/',
+    codeUrl: 'https://github.com/gabsantinelli/cartao-de-visitas-digital'
+  },
+  // QUANDO TIVER MAIS PROJETOS, ELES ENTRARÃO AQUI!
+];
 
 export default function HomePage() {
   return (
@@ -8,6 +21,25 @@ export default function HomePage() {
       <Header />
       <Hero />
       <About imageUrl="/GabrielSantinelli.jpg" />
+
+      <section className="py-28 px-8">
+        <h2 className="text-3xl font-bold text-center mb-12">Projetos</h2>
+        
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+  
+          {projectsData.map(project => (
+            <ProjectCard
+              key={project.title} 
+              imageUrl={project.imageUrl}
+              title={project.title}
+              description={project.description}
+              projectUrl={project.projectUrl}
+              codeUrl={project.codeUrl}
+            />
+          ))}
+        </div>
+      </section>
+
     </main>
   )
 }
