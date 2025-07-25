@@ -2,8 +2,10 @@ import { Header } from '@/components/Header'
 import { Hero } from '@/components/Hero'
 import { About } from '@/components/About'
 import { ProjectCard } from '@/components/ProjectCard'
-import { TechBadge } from '@/components/TechBadge' 
+import { TechBadge } from '@/components/TechBadge'
+import { ContactForm } from '@/components/ContactForm'
 
+// Meus projetos para exibir no portfólio
 const projectsData = [
   {
     imageUrl: '/projeto-cartao-visitas.png',
@@ -14,7 +16,7 @@ const projectsData = [
   },
 ];
 
-// 2. Lista de dados para as tecnologias
+// Minha lista de tecnologias para exibir
 const technologiesData = [
   { name: 'HTML' },
   { name: 'CSS' },
@@ -33,7 +35,7 @@ export default function HomePage() {
       <Hero />
       <About imageUrl="/GabrielSantinelli.jpg" />
 
-      {/* Seção de Projetos */}
+      {/* Minha seção de Projetos */}
       <section className="py-28 px-8">
         <h2 className="text-3xl font-bold text-center mb-12">Projetos</h2>
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -50,7 +52,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Nova seção de tecnologias */}
+      {/* Minha seção de tecnologias */}
       <section className="px-8 pb-28">
         <h2 className="text-3xl font-bold text-center mb-12">Habilidades & Tecnologias</h2>
         <div className="max-w-4xl mx-auto flex flex-wrap items-center justify-center gap-4">
@@ -59,6 +61,10 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      {/* Adicionando o formulário de contato no final da página */}
+      <ContactForm />
+      
     </main>
   )
 }
